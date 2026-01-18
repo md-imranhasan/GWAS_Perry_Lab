@@ -58,3 +58,52 @@ EOF
 
 
 ##### EUR
+
+
+
+``` bash
+cat <<EOF > bmi_eur.metal
+# --- Settings ---
+SCHEME STDERR
+AVERAGEFREQ ON
+MINMAXFREQ ON
+
+# --- File 1: FINNGEN (EUR) ---
+# Format: rsID A1 A2 FREQ BETA SE P N
+MARKER rsID
+ALLELE A1 A2
+FREQ   FREQ
+EFFECT BETA
+STDERR SE
+PVALUE P
+WEIGHT N
+PROCESS EUR_Finngen_BMI_QC_Ready.tsv
+
+# --- File 2: PULIT (EUR) ---
+# Format: rsID A1 A2 FREQ BETA SE P N
+MARKER rsID
+ALLELE A1 A2
+FREQ   FREQ
+EFFECT BETA
+STDERR SE
+PVALUE P
+WEIGHT N
+PROCESS PULIT_Bmi.giant-ukbb.meta-analysis.combined.23May2018.HapMap2_only_QC_Ready.tsv
+
+# --- File 3: MVP (EUR) ---
+# Format: rsID EA OA EAF BETA SE P N
+MARKER rsID
+ALLELE EA OA
+FREQ   EAF
+EFFECT BETA
+STDERR SE
+PVALUE P
+WEIGHT N
+PROCESS MVP_R4.1000G_AGR.BMI_Mean_INT.EUR.GIA.dbGaP_QC_Ready.tsv
+
+# --- Output ---
+OUTFILE BMI_EUR_META_ .tbl
+ANALYZE
+QUIT
+EOF
+```
