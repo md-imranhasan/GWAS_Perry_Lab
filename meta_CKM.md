@@ -1,6 +1,6 @@
 METAL Dir:  /depot/ppaschou/apps/METAL/generic-metal/metal --help
 
-''' bash
+``` bash
 cat <<EOF > bmi_afr.metal
 # --- Settings ---
 SCHEME STDERR
@@ -32,4 +32,4 @@ OUTFILE BMI_AFR_META_ .tbl
 ANALYZE
 QUIT
 EOF
-'''
+```
