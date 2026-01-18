@@ -3,6 +3,9 @@ METAL Dir:  /depot/ppaschou/apps/METAL/generic-metal/metal --help
 
 ## BMI
 
+
+##### AFR
+
 ``` bash
 awk -F'\t' 'NR==1 {for(i=1; i<=NF; i++) map[$i]=i; print "CHR", "POS", "A1", "A2", "FREQ", "BETA", "SE", "P"} NR>1 {p_val = 10^(-$(map["neglog10_pval_AFR"])); print $(map["chr"]), $(map["pos"]), $(map["alt"]), $(map["ref"]), $(map["af_AFR"]), $(map["beta_AFR"]), $(map["se_AFR"]), p_val}' AFR_continuous-21001-both_sexes-irnt_QC.tsv > AFR_UKB_Ready.tsv
 awk 'NR==1{print "UNIQID", $0} NR>1{print $1":"$2, $0}' AFR_UKB_Ready.tsv > UKB_AFR_Fixed.tsv
@@ -51,3 +54,7 @@ ANALYZE
 QUIT
 EOF
 ```
+
+
+
+##### EUR
