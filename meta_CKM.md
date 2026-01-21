@@ -1,4 +1,6 @@
 METAL Dir:  /depot/ppaschou/apps/METAL/generic-metal/metal --help
+## QC
+( zcat AFR_34059833-GCST90002242-EFO_0004541-Build37.f.tsv.gz | awk 'BEGIN{OFS="\t"}NR==1{print "MARKER","A1","A2","FREQ","BETA","SE","P"}NR>1&&$5!="NA"&&$5>=0.01&&$5<=0.99&&$3~/^[ACGT]+$/&&$4~/^[ACGT]+$/{a1=toupper($3);a2=toupper($4);f=$5;b=$6;se=$7;p=$8;if(length(a1)==1&&length(a2)==1){if(a1<a2){print $1":"$2,a1,a2,f,b,se,p}else{print $1":"$2,a2,a1,1-f,-b,se,p}}}' > A1C_MAGIC_AFR_READY.tsv && zcat EUR_34059833-GCST90002244-EFO_0004541-Build37.f.tsv.gz | awk 'BEGIN{OFS="\t"}NR==1{print "MARKER","A1","A2","FREQ","BETA","SE","P"}NR>1&&$5!="NA"&&$5>=0.01&&$5<=0.99&&$3~/^[ACGT]+$/&&$4~/^[ACGT]+$/{a1=toupper($3);a2=toupper($4);f=$5;b=$6;se=$7;p=$8;if(length(a1)==1&&length(a2)==1){if(a1<a2){print $1":"$2,a1,a2,f,b,se,p}else{print $1":"$2,a2,a1,1-f,-b,se,p}}}' > A1C_MAGIC_EUR_READY.tsv )
 
 
 ## BMI
