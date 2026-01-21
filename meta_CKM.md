@@ -1,8 +1,8 @@
 METAL Dir:  /depot/ppaschou/apps/METAL/generic-metal/metal --help
 ## QC (A!C_qc)
 ``` bash
-# 1) MVP AFR: QC (MAF>=0.01) + standardize to MARKER A1 A2 FREQ BETA SE P N
-zcat GCST90475093.h.tsv.gz | awk 'BEGIN{OFS="\t"} NR==1{print "MARKER","A1","A2","FREQ","BETA","SE","P","N"} NR>1 && $7!="NA" && $7>=0.01 && $7<=0.99 {print $8,$3,$4,$7,$5,$6,$8? $8:"NA",$11}' > A1C_MVP_AFR_READY.tsv
+zcat GCST90475093.h.tsv.gz | awk 'BEGIN{OFS="\t"} NR==1{print "MARKER","A1","A2","FREQ","BETA","SE","P","N"} NR>1 && $3!="NA" && $4!="NA" && $7!="NA" && $7>=0.01 && $7<=0.99 && $5!="NA" && $6!="NA" && $8!="NA" && $11!="NA"{a=toupper($3); b=toupper($4); if(a ~ /^[ACGT]+$/ && b ~ /^[ACGT]+$/) print $9,a,b,$7,$5,$6,$8,$11}' > A1C_MVP_AFR_READY.tsv
+
 
 ```
 
