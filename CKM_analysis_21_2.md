@@ -1,1 +1,1 @@
-
+# Our plan is to do Qc ( QC only MAF (1%)), than liftiover by crossmap (liftover hg37)(all data should be hg37 , and than do meta analysis BMI: For AFR, metaanalyze the two files with AFR prefixes. For EUR, meta-analyze the remaining
