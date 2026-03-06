@@ -5,6 +5,8 @@
 # 1. Create the final output folder
 mkdir -p /depot/ppaschou/data/NEW_CKM/qc/BMI/meta_ready_hg19
 
+#we do not need to do MAF , if we want to do only liftover using crossmap. We can start from #3
+
 # 2. Filter MAF > 1% and convert to BED format
 zcat /depot/ppaschou/data/NEW_CKM/SUMSTATS_IMRAN/BMI/GCST90692054.h.tsv.gz | awk 'BEGIN{FS=OFS="\t"} NR>1 && $7>0.01 && $7<0.99 {print "chr"$1, $2-1, $2, $3, $4, $5, $6, $7, $8, $9}' | gzip > /depot/ppaschou/data/NEW_CKM/qc/BMI/GCST90692054_maf1.bed.gz
 #module load biocontainers
