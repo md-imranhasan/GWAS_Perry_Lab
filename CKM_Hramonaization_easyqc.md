@@ -1,5 +1,7 @@
 ## easyqc config:
 
+alloc -A pdrineas --partition=cpu --qos=normal --nodes=1 --ntasks=1 --cpus-per-task=4 --mem=64G --time=04:00:00
+
 ``` bash
 module --force purge
 module load biocontainers
