@@ -1,9 +1,6 @@
 ## easyqc config:
 
 ``` bash
-.libPaths(c("~/Rlibs_4.2.2", .libPaths()))
-library(EasyQC)
-EasyQC("/scratch/negishi/hasan128/data/harmon_marry_data/finngen_eur_hg19_easyqc.ecf")
 module --force purge
 module load biocontainers
 module load gcc
@@ -14,6 +11,10 @@ module load libpng
 module load freetype
 module load fontconfig
 R
+
+.libPaths(c("~/Rlibs_4.2.2", .libPaths()))
+library(EasyQC)
+EasyQC("/scratch/negishi/hasan128/data/harmon_marry_data/finngen_eur_hg19_easyqc.ecf")
 ```
 
 ``` bash
