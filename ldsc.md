@@ -11,6 +11,12 @@ hasan128@login00.negishi:[AF] $ munge_sumstats.py --sumstats finngen_R7_I9_AF.gz
 ldsc.py --h2 AF_FINNGEN_EUR.sumstats.gz --ref-ld-chr /depot/ppaschou/data/CRM_data/ldsc/eur_w_ld_chr/ --w-ld-chr /depot/ppaschou/data/CRM_data/ldsc/eur_w_ld_chr/ --out AF_h2
 ```
 
+# Create the Fixed File
+Run this to create the clean _fixed.tbl file. This drops any rows with "NA" in the P-value column and floors the tiny P-values to 1e-300.
+```
+awk -v OFS='\t' 'NR==1 {print $0} NR>1 { if ($10 == "NA" || $10 == "NaN" || $10 == "-") next; if ($10 + 0 == 0 || $10 < 1e-300) $10=1e-300; print $0 }' /scratch/negishi/hasan128/data/meta_analysis/A1C/A1C_ALL_META_1.tbl > /scratch/negishi/hasan128/data/meta_analysis/A1C/A1C_ALL_META_1_fixed.tbl
+```
+
 # A1C_sh.sh
 ``` bash
 #!/bin/bash
