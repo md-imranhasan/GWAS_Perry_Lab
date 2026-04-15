@@ -30,7 +30,7 @@ plink \
 
 ```
 
-## One style code
+## One style code using range
 ```bash
 plink --bfile /depot/ppaschou/data/NEW_CKM/SUMSTATS_IMRAN/g1000_eur_afr_autosome_merged --clump /scratch/negishi/hasan128/data/manhatton/WC_ALL_META_1_with_chr_pos.tbl --clump-snp-field MarkerName --clump-field P-value --clump-p1 5e-8 --clump-r2 0.1 --clump-kb 3000 --clump-range /scratch/negishi/hasan128/data/clumping/glist-hg19 --clump-range-border 0 --out /scratch/negishi/hasan128/data/clumping/WC_ALL_clumped
 ```
