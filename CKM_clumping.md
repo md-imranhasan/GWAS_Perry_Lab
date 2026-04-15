@@ -50,10 +50,16 @@ sort -k1,1 -k2,2n /scratch/negishi/hasan128/data/clumping/intersect/DBP_cross_re
 
 sort -k1,1 -k2,2n /scratch/negishi/hasan128/data/clumping/intersect/DBP_large_regions.bed > /scratch/negishi/hasan128/data/clumping/intersect/DBP_large_regions.sorted.bed
 
+#shared loci between cross and large ancestry
+
 bedtools intersect -a /scratch/negishi/hasan128/data/clumping/intersect/DBP_cross_regions.sorted.bed -b /scratch/negishi/hasan128/data/clumping/intersect/DBP_large_regions.sorted.bed -wa -wb > /scratch/negishi/hasan128/data/clumping/intersect/DBP_cross_vs_large_overlap.tsv
 
+
+#cross-only loci
 bedtools intersect -a /scratch/negishi/hasan128/data/clumping/intersect/DBP_cross_regions.sorted.bed -b /scratch/negishi/hasan128/data/clumping/intersect/DBP_large_regions.sorted.bed -v > /scratch/negishi/hasan128/data/clumping/intersect/DBP_cross_only_loci.bed
 
+
+#large-only loci
 bedtools intersect -a /scratch/negishi/hasan128/data/clumping/intersect/DBP_large_regions.sorted.bed -b /scratch/negishi/hasan128/data/clumping/intersect/DBP_cross_regions.sorted.bed -v > /scratch/negishi/hasan128/data/clumping/intersect/DBP_large_only_loci.bed
 
 
