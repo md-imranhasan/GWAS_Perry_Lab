@@ -58,3 +58,77 @@ bedtools intersect -a /scratch/negishi/hasan128/data/clumping/intersect/DBP_larg
 
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```bash
+# DBP_keaton_first_afr_only_META_1.tbl - 
+# Input for this meta-analysis was stored in the files:
+# --> Input File 1 : /scratch/negishi/hasan128/data/harmonized/DBP/UKB_KEATON_DBP_MAF_harmonized.tsv
+# --> Input File 2 : /scratch/negishi/hasan128/data/harmonized/DBP/mvp_dbp_maf_harmonized.tsv
+# --> Input File 3 : /scratch/negishi/hasan128/data/harmonized/DBP/UKB_AFR_MAF_DBP_harmonized.tsv
+
+
+DBP_keaton_mvp_afr_only_META_1.tbl
+# Input for this meta-analysis was stored in the files:
+# --> Input File 1 : /scratch/negishi/hasan128/data/harmonized/DBP/UKB_KEATON_DBP_MAF_harmonized.tsv
+# --> Input File 2 : /scratch/negishi/hasan128/data/harmonized/DBP/mvp_dbp_maf_harmonized.tsv
+
+
+DBP_keaton_ukb_afr__META_1.tbl
+# Input for this meta-analysis was stored in the files:
+# --> Input File 1 : /scratch/negishi/hasan128/data/harmonized/DBP/UKB_KEATON_DBP_MAF_harmonized.tsv
+# --> Input File 2 : /scratch/negishi/hasan128/data/harmonized/DBP/UKB_AFR_MAF_DBP_harmonized.tsv
+
+
+
+
+
+
+# SBP
+
+SBP_afr_first_with_keaton_only_META_1.tbl
+# Input for this meta-analysis was stored in the files:
+# --> Input File 1 : /scratch/negishi/hasan128/data/harmonized/SBP/ukb_keaton_maf_harmonized.tsv
+# --> Input File 2 : /scratch/negishi/hasan128/data/harmonized/SBP/MVP_afr_maf_harmonized.tsv
+# --> Input File 3 : /scratch/negishi/hasan128/data/harmonized/SBP/UKB_Afr_maf_harmonized.tsv
+
+
+SBP_keaton_MVP_afr_META_1.tbl.info
+# Input for this meta-analysis was stored in the files:
+# --> Input File 1 : /scratch/negishi/hasan128/data/harmonized/SBP/ukb_keaton_maf_harmonized.tsv
+# --> Input File 2 : /scratch/negishi/hasan128/data/harmonized/SBP/MVP_afr_maf_harmonized.tsv
+
+
+
+SBP_keaton_UKB_afr_META_1.tbl
+# Input for this meta-analysis was stored in the files:
+# --> Input File 1 : /scratch/negishi/hasan128/data/harmonized/SBP/ukb_keaton_maf_harmonized.tsv
+# --> Input File 2 : /scratch/negishi/hasan128/data/harmonized/SBP/UKB_Afr_maf_harmonized.tsv
+
+
+```
+
+
