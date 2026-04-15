@@ -1,3 +1,6 @@
+
+``` 
+
 hasan128@login01.negishi:[pvalue] $ echo "SBP Keaton total:" $(wc -l < /scratch/negishi/hasan128/data/clumping/intersect/SBP_large_regions.sorted.bed)
 SBP Keaton total: 1820
 hasan128@login01.negishi:[pvalue] $ echo "SBP Meta total:" $(wc -l < /scratch/negishi/hasan128/data/clumping/intersect/SBP_keaton_UKB_afr_clumped.sorted.bed)
@@ -17,3 +20,4 @@ hasan128@login01.negishi:[pvalue] $ echo "DBP Unique Keaton:" $(wc -l < DBP_larg
 DBP Unique Keaton: 157
 hasan128@login01.negishi:[pvalue] $ echo "DBP Unique Meta:" $(wc -l < DBP_meta_only_loci_15_4.bed)
 DBP Unique Meta: 24
+``` bash
