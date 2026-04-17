@@ -1,3 +1,8 @@
+``` bash
+awk 'NR>1 {gsub(/\r/,""); print $1}' sbp_keaton_meta_ukb_status_with_header.tsv > target_snps.txt
+```
+
+``` bash
 awk '
 BEGIN { OFS="\t" }
 
@@ -45,3 +50,22 @@ target_snps.txt \
 /scratch/negishi/hasan128/data/harmonized/SBP/Finngen_maf_harmonized.tsv \
 /scratch/negishi/hasan128/data/harmonized/SBP/ukb_keaton_maf_harmonized.tsv \
 > SBP_meta_4studies_status.tsv
+```
+
+
+
+
+``` bash
+hasan128@a204.negishi:[pvalue] $ head SBP_meta_4studies_status.tsv
+SNP     Meta_Status     Meta_P  Meta_EA Meta_NEA        MVP_Status      MVP_P   MVP_EA  MVP_NEA UKB_Status      UKB_P   UKB_EA  UKB_NEA FIN_Status      FIN_P   FIN_EA  FIN_NEA KEA_Status      KEA_P   KEA_EA  KEA_NEA
+rs10018970      Present 0.2912  a       g       Present 0.3226  A       G       Present 0.931923        A       G       Present 0.2802  A       G       Present 4.243e-09       A       G
+rs10054208      Present 0.1013  t       c       Present 0.5257  T       C       Present 0.366944        T       C       Present 0.504052        T       C       Present 2.724e-08       T       C
+rs10066799      Present 0.01548 t       g       Present 0.08963 T       G       Present 0.185952        T       G       Present 0.656695        T       G       Present 7.962e-12       T       G
+rs10072115      Present 0.5844  a       c       Present 0.8975  C       A       Present 0.42924 C       A       Present 0.867375        C       A       Present 4.008e-08       C       A
+rs1009017       Present 0.05024 t       c       Present 0.03556 C       T       Present 0.162443        C       T       Present 0.979861        C       T       Present 6.637e-14       C       T
+rs10172510      Present 0.01633 a       g       Present 0.2503  A       G       Present 0.382208        A       G       Present 0.11199 A       G       Present 2.849e-08       A       G
+rs10183431      Present 0.3461  t       c       Present 0.516   C       T       Present 0.740798        C       T       Present 0.825876        C       T       Present 9.619e-09       C       T
+rs10233127      Present 0.1719  a       t       Present 0.8162  A       T       Present 0.63387 A       T       Present 0.187865        A       T       Present 2.82e-13        A       T
+rs1030009       Present 0.1543  t       c       Present 0.3039  T       C       Present 0.18281 T       C       Present 0.828111        T       C       Present 1.047e-09       T       C
+
+```
