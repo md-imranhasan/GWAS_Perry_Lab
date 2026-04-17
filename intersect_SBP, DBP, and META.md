@@ -148,4 +148,35 @@ rs6669446       Present 0.008242        t       c       Present 0.01773 C       
 
 
 
+# with Meta
+```bash
+# 1. Convert the Meta .tbl file into a proper BED format
+awk 'BEGIN {OFS="\t"} 
+     NR>1 && $12!="NA" && $12!="" && $13!="NA" && $13!="" {
+         print $12, $13-1, $13, $1, $10
+     }' /scratch/negishi/hasan128/data/manhatton/DBP_ALL_META_1_with_chr_pos.tbl > DBP_Meta_Unsorted.bed
+
+# 2. Sort the newly created Meta BED file
+sort -k1,1V -k2,2n DBP_Meta_Unsorted.bed > DBP_Meta_Sorted.bed
+
+# 3. Intersection 1: A = Meta, B = Large Keaton (Counts Keaton loci overlapping each Meta SNP)
+bedtools intersect \
+  -a DBP_Meta_Sorted.bed \
+  -b /scratch/negishi/hasan128/data/clumping/intersect/DBP_large_regions.sorted.bed \
+  -wa -c -sorted > Meta_base_overlap_Keaton.tsv
+
+# 4. Intersection 2: A = Large Keaton, B = Meta (Counts Meta SNPs overlapping each Keaton locus)
+bedtools intersect \
+  -a /scratch/negishi/hasan128/data/clumping/intersect/DBP_large_regions.sorted.bed \
+  -b DBP_Meta_Sorted.bed \
+  -wa -c -sorted > Keaton_base_overlap_Meta.tsv
+
+# Optional: Clean up the unsorted intermediate file
+rm DBP_Meta_Unsorted.bed
+
+```
+
+
+
+
 
