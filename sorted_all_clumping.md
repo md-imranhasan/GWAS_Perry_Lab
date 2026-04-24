@@ -42,4 +42,27 @@ hasan128@a276.negishi:[ALL_clumping] $ for file in *.clumped.ranges; do echo "Pr
 
 
 
+# Intersect All
+
+like our files are:
+``` bash
+A1C_cross_meta1_clumped_sorted.bed          DBP_UKB_KEATON_DBP_MAF_harmonized_sorted.bed  SBP_cross_meta_nokeaton1_sorted.bed
+A1C_UKB_EUR_filtered_harmonized_sorted.bed  eGFR_cross_meta1_clumped_sorted.bed           SBP_ukb_keaton_maf_harmonized_sorted.bed
+AF_cross_meta1_clumped_sorted.bed           eGFR_eGFR_gwas_eur_harmonized_sorted.bed      STROKE_cross_meta1_clumped_sorted.bed
+AF_eur_gwas_AF_MAF_harmonized_sorted.bed    HDL_cross_meta1_clumped_sorted.bed            T2D_cross_meta1_clumped_sorted.bed
+BMI_cross_meta1_clumped_sorted.bed          HDL_EUR_HDL_maf_harmonized_sorted.bed         T2D_DIAMANTE-EUR_maf_harmonized_sorted.bed
+BMI_giant_maf_harmonized_sorted.bed         HF_cross_meta1_clumped_sorted.bed             TG_cross_meta1_clumped_sorted.bed
+CRF_cross_meta1_clumped_sorted.bed          HTN_cross_meta1_clumped_sorted.bed            TG_TG_EUR_MAF_harmonized_sorted.bed
+CRF_MVP_EUR_CRF_MAF_harmonized_sorted.bed   HTN_ukb_eur_maf_harmonized_sorted.bed         TROPO_cross_meta1_clumped_sorted.bed
+DBP_cross_meta1_clumped_sorted.bed                                             WC_cross_meta1_clumped_sorted.bed
+DBP_cross_meta_nokeaton1_sorted.bed         SBP_cross_meta1_clumped_sorted.bed            WC_Giant_maf_eur_harmonized_sorted.bed
+```
+
+``` bash
+mkdir -p intersect && for trait in A1C AF BMI CRF DBP eGFR HDL HF HTN SBP STROKE T2D TG TROPO WC; do meta="${trait}_cross_meta1_clumped_sorted.bed"; gwas=$(ls ${trait}_*_harmonized_sorted.bed 2>/dev/null | head -n 1); if [[ -f "$meta" && -n "$gwas" ]]; then echo "Processing $trait..."; awk '$1 ~ /^[0-9]+$/ && $1 <= 22' "$meta" > tmp_m.bed; awk '$1 ~ /^[0-9]+$/ && $1 <= 22' "$gwas" > tmp_g.bed; bedtools intersect -a tmp_m.bed -b tmp_g.bed -wa -c > "intersect/${trait}_Meta_overlaps_GWAS_24_4.tsv"; bedtools intersect -a tmp_g.bed -b tmp_m.bed -wa -c > "intersect/${trait}_GWAS_overlaps_Meta_24_4.tsv"; bedtools intersect -a tmp_m.bed -b tmp_g.bed -v > "intersect/${trait}_Meta_Unique_Loci_24_4.bed"; bedtools intersect -a tmp_g.bed -b tmp_m.bed -v > "intersect/${trait}_GWAS_Unique_Loci_24_4.bed"; rm tmp_m.bed tmp_g.bed; fi; done && echo "All done!"
+```
+
+
+
+
 
