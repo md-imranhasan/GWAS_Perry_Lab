@@ -63,7 +63,7 @@ echo "Finished munge_sumstats at $(date)"
 
 
 
-##### AFR LDSC Ref is :  /depot/ppaschou/data/ukb_mary/crm/afr_w_ld_chr/LDscore/LDscore
+## AFR LDSC Ref is :  /depot/ppaschou/data/ukb_mary/crm/afr_w_ld_chr/LDscore/LDscore
 
 ``` bash
 ldsc.py --rg A1C_ALL_munged.sumstats.gz,AF_ALL_munged.sumstats.gz,BMI_ALL_munged.sumstats.gz,CRF_ALL_munged.sumstats.gz,DBP_ALL_munged.sumstats.gz,eGFR_ALL_munged.sumstats.gz,HDL_ALL_munged.sumstats.gz,HF_ALL_munged.sumstats.gz,HTN_ALL_munged.sumstats.gz,SBP_ALL_munged.sumstats.gz,STROKE_ALL_munged.sumstats.gz,T2D_ALL_munged.sumstats.gz,TG_ALL_munged.sumstats.gz,TROPO_ALL_munged.sumstats.gz,WC_ALL_munged.sumstats.gz --ref-ld-chr /depot/ppaschou/data/ukb_mary/crm/eur+afr_LD/ --w-ld-chr /depot/ppaschou/data/ukb_mary/crm/eur+afr_LD/ --out all_15_traits_cross_ancestry_rg
