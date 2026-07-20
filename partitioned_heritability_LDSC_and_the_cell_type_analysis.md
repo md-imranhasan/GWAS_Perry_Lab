@@ -1,6 +1,6 @@
 ## The Corrected S-LDSC SLURM Script
 
-######## Create this file (submit_sldsc_cts.sh) in your /scratch/negishi/hasan128/data/magma/ folder and submit it using sbatch.
+#### Create this file (submit_sldsc_cts.sh) in your /scratch/negishi/hasan128/data/magma/ folder and submit it using sbatch.
 
 ``` 
 #!/bin/bash
