@@ -1,0 +1,1 @@
+/scratch/negishi/hasan128/developmental_psychiatric_genomics/handoff/Developmental_Genomics_Start_v8/resources//LDSC_GRCh37
