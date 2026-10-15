@@ -1,3 +1,16 @@
+/ldsc.py \
+--out /scratch/negishi/hasan128/developmental_psychiatric_genomics/handoff/Developmental_Genomics_Start_v8/outputs/LDSC_BASELINE_20261015T055744Z_785034/dep/dep.baselineLD_v2_2 \
+--h2 /scratch/negishi/hasan128/developmental_psychiatric_genomics/handoff/Developmental_Genomics_Start_v8/outputs/LDSC_BASELINE_20261015T055744Z_785034/dep/dep.registry_N.sumstats.gz \
+--ref-ld-chr /scratch/negishi/hasan128/developmental_psychiatric_genomics/handoff/Developmental_Genomics_Start_v8/resources/LDSC_GRCh37/extracted/1000G_Phase3_baselineLD_v2.2_ldscores/baselineLD. \
+--w-ld-chr /scratch/negishi/hasan128/developmental_psychiatric_genomics/handoff/Developmental_Genomics_Start_v8/resources/LDSC_GRCh37/extracted/1000G_Phase3_weights_hm3_no_MHC/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--overlap-annot  \
+--print-coefficients  \
+--frqfile-chr /scratch/negishi/hasan128/developmental_psychiatric_genomics/handoff/Developmental_Genomics_Start_v8/resources/LDSC_GRCh37/extracted/1000G_Phase3_frq/1000G_Phase3_frq/1000G.EUR.QC. \
+--print-delete-vals 
+
+
+
+
 we download before , just its usefull
 
 hasan128@login04.negishi:[ldsc] $ ls
